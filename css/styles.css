@@ -1,13 +1,60 @@
 /* Reset and Base Styles */
+@font-face {
+  font-family: 'Acherus';
+  src: url('https://www.assets.cms.vt.edu/fonts/acherusgrotesque/acherusgrotesque_regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acherus';
+  src: url('https://www.assets.cms.vt.edu/fonts/acherusgrotesque/acherusgrotesque_bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gineso-condensed';
+  src: url('https://www.assets.cms.vt.edu/fonts/gineso-condensed/Gineso-ConReg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gineso-condensed';
+  src: url('https://www.assets.cms.vt.edu/fonts/gineso-condensed/Gineso-ConDem.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --vt-maroon: #861F41;
+  --vt-burnt-orange: #E5751F;
+  --vt-hokie-stone: #75787B;
+  --vt-grey: #D7D2CB;
+  --vt-smoke: #E5E1E6;
+  --vt-white: #FFFFFF;
+  --vt-body-text: #1F1F1F;
+  --vt-line: #D7D2CB;
+  --vt-surface: #F7F5F0;
+  --vt-muted: #75787B;
+  --vt-muted-dark: #5E6062;
+  --vt-soft-maroon: #F3E8EC;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Acherus', 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
   box-sizing: border-box;
-  color: #2c3e50;
-  background-color: #ffffff;
+  color: var(--vt-body-text);
+  background-color: var(--vt-white);
 }
 
 body {
@@ -28,7 +75,7 @@ a {
 }
 
 a:hover {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
 }
 
 /* Typography */
@@ -38,7 +85,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'gineso-condensed', 'Acherus', sans-serif;
   font-weight: 600;
   color: #1a1a1a;
   margin-top: 1.5rem;
@@ -51,14 +98,14 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  border-bottom: 3px solid #F15A22;
+  border-bottom: 3px solid var(--vt-burnt-orange);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: var(--vt-muted-dark);
 }
 
 p {
@@ -82,7 +129,8 @@ li {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #0C2340 0%, #F15A22 100%);
+  background: var(--vt-maroon);
+  border-bottom: 3px solid var(--vt-burnt-orange);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 0;
   width: 100%;
@@ -95,7 +143,7 @@ li {
 
 .navbar-brand {
   color: #fff !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'gineso-condensed', 'Acherus', sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
@@ -103,9 +151,9 @@ li {
 }
 
 .navbar-brand:hover {
-  background-color: rgba(241, 90, 34, 0.1);
-  border-color: #F15A22;
-  color: #F15A22;
+  background-color: rgba(232, 119, 34, 0.12);
+  border-color: var(--vt-burnt-orange);
+  color: var(--vt-burnt-orange);
 }
 
 .navbar-toggler {
@@ -174,7 +222,7 @@ li {
   padding: 40px 10%;
   min-height: calc(100vh - 80px);
   flex: 1;
-  background-color: #fafafa;
+  background-color: var(--vt-surface);
 }
 
 /* Sections */
@@ -258,12 +306,12 @@ section {
 }
 
 .publications h1 {
-  color: #0C2340;
+  color: #861F41;
   margin-bottom: 0.5rem;
 }
 
 .publications-intro {
-  color: #666;
+  color: var(--vt-muted-dark);
   font-style: italic;
   margin-bottom: 2rem;
   font-size: 0.95rem;
@@ -271,7 +319,7 @@ section {
 
 .publication-item {
   background: #fff !important;
-  border-left: 4px solid #F15A22 !important;
+  border-left: 4px solid var(--vt-burnt-orange) !important;
   padding: 1.5rem !important;
   margin-bottom: 1.5rem !important;
   border-radius: 8px !important;
@@ -286,7 +334,7 @@ section {
 
 /* Publication Tabs */
 #publicationTabs {
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid var(--vt-line);
   margin-bottom: 2rem;
   background-color: transparent;
   flex-wrap: nowrap !important;
@@ -297,7 +345,7 @@ section {
 }
 
 #publicationTabs .nav-link {
-  color: #666 !important;
+  color: var(--vt-muted-dark) !important;
   font-weight: 500 !important;
   border: none !important;
   border-bottom: 3px solid transparent !important;
@@ -312,16 +360,16 @@ section {
 }
 
 #publicationTabs .nav-link:hover {
-  color: #F15A22 !important;
-  border-bottom-color: #F15A22 !important;
+  color: var(--vt-burnt-orange) !important;
+  border-bottom-color: var(--vt-burnt-orange) !important;
   background-color: transparent !important;
 }
 
 #publicationTabs .nav-link.active {
-  color: #F15A22 !important;
+  color: var(--vt-burnt-orange) !important;
   font-weight: 600 !important;
   background-color: transparent !important;
-  border-bottom-color: #F15A22 !important;
+  border-bottom-color: var(--vt-burnt-orange) !important;
 }
 
 #publicationTabs .nav-link i {
@@ -360,13 +408,13 @@ section {
 }
 
 .year-divider {
-  color: #0C2340;
+  color: #861F41;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 3px solid #0C2340;
+  border-bottom: 3px solid #861F41;
 }
 
 /* News Section */
@@ -376,13 +424,13 @@ section {
 }
 
 .news h1 {
-  color: #0C2340;
+  color: #861F41;
   margin-bottom: 0.5rem;
 }
 
 .news-item {
   background: #fff;
-  border-left: 4px solid #F15A22;
+  border-left: 4px solid var(--vt-burnt-orange);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
@@ -396,39 +444,39 @@ section {
 }
 
 .news-date {
-  color: #666;
+  color: var(--vt-muted-dark);
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
   font-weight: 500;
 }
 
 .news-date i {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   margin-right: 0.5rem;
 }
 
 .news-title {
-  color: #0C2340;
+  color: #861F41;
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
 .news-content {
-  color: #555;
+  color: var(--vt-muted);
   line-height: 1.7;
   margin-bottom: 1rem;
 }
 
 .news-link {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .news-link:hover {
-  color: #0C2340;
+  color: #861F41;
   text-decoration: underline;
 }
 
@@ -452,14 +500,14 @@ section {
 }
 
 .news-back-link a {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .news-back-link a:hover {
-  color: #0C2340;
+  color: #861F41;
 }
 
 .news-back-link i {
@@ -469,11 +517,11 @@ section {
 .news-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid var(--vt-line);
 }
 
 .news-header h1 {
-  color: #0C2340;
+  color: #861F41;
   font-size: 2rem;
   margin-top: 0.5rem;
   margin-bottom: 0;
@@ -484,21 +532,21 @@ section {
 }
 
 .news-body h2 {
-  color: #0C2340;
+  color: #861F41;
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #F15A22;
+  border-bottom: 2px solid var(--vt-burnt-orange);
   padding-bottom: 0.5rem;
 }
 
 .news-body p {
-  color: #555;
+  color: var(--vt-muted);
   margin-bottom: 1.5rem;
 }
 
 .news-body ul {
-  color: #555;
+  color: var(--vt-muted);
   margin-bottom: 1.5rem;
   padding-left: 2rem;
 }
@@ -523,11 +571,11 @@ section {
 .news-footer {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 2px solid #e0e0e0;
+  border-top: 2px solid var(--vt-line);
 }
 
 .news-footer a {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: none;
 }
 
@@ -537,7 +585,7 @@ section {
 
 /* Publication Details */
 .pub-title {
-  color: #0C2340;
+  color: #861F41;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -545,25 +593,25 @@ section {
 }
 
 .pub-authors {
-  color: #555;
+  color: var(--vt-muted);
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 
 .pub-authors strong {
-  color: #0C2340;
+  color: #861F41;
   font-weight: 600;
 }
 
 .pub-venue {
-  color: #666;
+  color: var(--vt-muted-dark);
   font-style: italic;
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
 }
 
 .doi-link {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: none;
   font-style: normal;
   word-break: break-all;
@@ -571,39 +619,39 @@ section {
 }
 
 .doi-link:hover {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: underline;
 }
 
 .research-heading {
-  color: #0C2340;
+  color: #861F41;
   font-size: 1rem;
 }
 
 .tech-description {
-  color: #555;
+  color: var(--vt-muted);
   font-size: 0.9rem;
 }
 
 .project-description {
-  color: #666;
+  color: var(--vt-muted-dark);
   font-size: 0.9rem;
 }
 
 .project-detail {
-  color: #555;
+  color: var(--vt-muted);
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
 .author-list {
-  color: #555;
+  color: var(--vt-muted);
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 
 .journal-info {
-  color: #666;
+  color: var(--vt-muted-dark);
   font-style: italic;
   margin-bottom: 0.25rem;
   font-size: 0.9rem;
@@ -625,7 +673,7 @@ section {
 
 /* Citation Styles */
 .citation-icon {
-  color: #0C2340;
+  color: #861F41;
   font-size: 0.8rem;
   margin-left: 0.3rem;
   text-decoration: none;
@@ -636,12 +684,12 @@ section {
   background: #FFF5F0;
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid #F15A22;
+  border: 1px solid var(--vt-burnt-orange);
 }
 
 .citation-icon:hover {
   color: #ffffff;
-  background: #F15A22;
+  background: var(--vt-burnt-orange);
   transform: scale(1.05);
 }
 
@@ -669,8 +717,8 @@ section {
 }
 
 .citation-box {
-  background-color: #f8f9fa;
-  border-left: 1px solid #0C2340;
+  background-color: var(--vt-surface);
+  border-left: 1px solid #861F41;
   padding: 0.5rem;
   margin-top: 0.5rem;
   border-radius: 4px;
@@ -689,7 +737,7 @@ section {
   text-align: center;
   margin-bottom: 3rem;
   padding: 2.5rem 2rem;
-  background: linear-gradient(135deg, #0C2340 0%, #F15A22 100%);
+  background: linear-gradient(135deg, var(--vt-maroon) 0%, var(--vt-burnt-orange) 100%);
   color: #fff;
   border-radius: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -705,7 +753,7 @@ section {
 .blogs .subtitle {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #e3f2fd;
+  color: #F3E8EC;
   border: none;
 }
 
@@ -713,7 +761,7 @@ section {
   color: #1a1a1a;
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 2px solid #e0e0e0;
+  border-top: 2px solid var(--vt-line);
 }
 
 .blogs h1:first-of-type {
@@ -722,7 +770,7 @@ section {
 }
 
 .blogs h3 {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   margin-top: 1.5rem;
   font-weight: 600;
 }
@@ -732,7 +780,7 @@ section {
 }
 
 .blogs table th {
-  background-color: #0C2340;
+  background-color: #861F41;
   color: #fff;
   padding: 12px;
   text-align: left;
@@ -745,23 +793,23 @@ section {
 }
 
 .blogs table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: var(--vt-surface);
 }
 
 .blogs a {
-  color: #F15A22;
+  color: var(--vt-burnt-orange);
   text-decoration: none;
-  border-bottom: 1px solid #F15A22;
+  border-bottom: 1px solid var(--vt-burnt-orange);
 }
 
 .blogs a:hover {
-  color: #004499;
-  border-bottom-color: #004499;
+  color: var(--vt-maroon);
+  border-bottom-color: var(--vt-maroon);
 }
 
 /* Contact Section */
 .contact h2 {
-  color: #2c3e50;
+  color: var(--vt-muted-dark);
   margin-bottom: 2rem;
 }
 
@@ -785,14 +833,14 @@ section {
 
 .contact input:focus,
 .contact textarea:focus {
-  border-color: #F15A22;
-  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.15);
+  border-color: var(--vt-burnt-orange);
+  box-shadow: 0 0 0 0.2rem rgba(134, 31, 65, 0.2);
   outline: none;
 }
 
 .contact .btn-primary {
-  background-color: #F15A22;
-  border-color: #F15A22;
+  background-color: var(--vt-burnt-orange);
+  border-color: var(--vt-burnt-orange);
   padding: 12px 35px;
   font-size: 1rem;
   font-weight: 600;
@@ -805,8 +853,8 @@ section {
 }
 
 .contact .btn-primary:hover {
-  background-color: #004499;
-  border-color: #004499;
+  background-color: var(--vt-maroon);
+  border-color: var(--vt-maroon);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -829,7 +877,8 @@ section {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #0C2340 0%, #F15A22 50%, #0C2340 100%);
+  background: var(--vt-maroon);
+  border-top: 3px solid var(--vt-burnt-orange);
   color: #fff;
   padding: 1rem 5%;
   margin-left: 0;
@@ -854,7 +903,7 @@ footer {
 }
 
 .footer-subtitle {
-  color: #b3d9ff;
+  color: var(--vt-soft-maroon);
   font-size: 0.8rem;
   font-style: italic;
   margin-bottom: 0.75rem;
@@ -886,8 +935,8 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(134, 31, 65, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .footer-links a i {
@@ -896,7 +945,7 @@ footer {
 
 .footer-links a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(134, 31, 65, 0.35);
 }
 
 /* Brand-specific colors for footer links */
