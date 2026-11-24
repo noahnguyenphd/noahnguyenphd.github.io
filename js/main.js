@@ -11,8 +11,10 @@
         // Load shared page fragments and then activate the current nav link
         loadSharedLayout();
 
-        // Smooth scroll to top on page load
-        window.scrollTo(0, 0);
+        // Scroll to top on page load, unless the link points to a section (for example #poster)
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
 
         // Add event listeners for navigation links
         addNavigationListeners();
